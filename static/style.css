@@ -1,0 +1,514 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --primary-color: #007bff; /* Blue accent from resume */
+  --secondary-color: #343a40; /* Dark Gray */
+  --light-gray: #f8f9fa;
+  --text-color: #333;
+  --white-color: #fff;
+  --section-padding: 60px 20px;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset margin, padding and border box sizing, smooth scroll */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Body font and background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  color: var(--text-color);
+  background-color: var(--white-color);
+}
+
+/* Headings color and margin */
+h1, h2, h3, h4 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+/* Main heading styles */
+h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Icon spacing in headings */
+h2 i {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+/* Sub heading style */
+h3.sub-heading {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Sections padding and max width */
+section {
+  padding: var(--section-padding);
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* --- Header & Navigation --- */
+header {
+  background: var(--white-color);
+  color: var(--secondary-color);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo styling */
+nav .logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Navigation list */
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+/* List item spacing */
+nav ul li {
+  margin-left: 25px;
+}
+
+/* Navigation links styling */
+nav ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hover and active link color */
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--primary-color);
+}
+
+/* Hamburger menu hidden by default */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/* --- Main Content --- */
+main {
+  padding-top: 80px; /* Adjust based on header height */
+}
+
+/* --- Hero Section --- */
+#hero {
+  background: var(--light-gray);
+  color: var(--secondary-color);
+  min-height: calc(100vh - 80px); /* full viewport height minus header */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+/* Profile picture circle with border and shadow */
+.profile-pic-hero {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 5px solid var(--primary-color);
+  box-shadow: var(--box-shadow);
+}
+
+/* Hero main heading */
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+/* Subtitle styling */
+#hero .subtitle {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* Contact info in Hero */
+.hero-contact a, .hero-contact p {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Contact links hover effect */
+.hero-contact a:hover {
+  color: var(--primary-color);
+}
+
+/* Icons in contact info */
+.hero-contact i {
+  margin-right: 8px;
+  color: var(--primary-color);
+  width: 20px; /* Align icons */
+}
+
+/* Call to action button */
+.cta-button {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--white-color);
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for button */
+.cta-button:hover {
+  background: #0056b3; /* Darker blue */
+  transform: translateY(-2px);
+}
+
+/* --- About Section (Summary, Strengths, Languages) --- */
+#about p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1rem;
+}
+
+/* Strengths and Languages containers */
+.strengths-languages {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* Boxes for strengths and languages */
+.strengths, .languages {
+  background: var(--light-gray);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  flex-basis: 45%; /* Takes roughly half width */
+  min-width: 300px;
+}
+
+/* Headings inside strengths and languages */
+.strengths h3, .languages h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+}
+
+/* Icon margin on headings */
+.strengths h3 i, .languages h3 i {
+  margin-right: 8px;
+}
+
+/* Lists inside strengths and languages */
+.strengths ul, .languages ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* List item spacing & font size */
+.strengths ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Icons in strengths list */
+.strengths ul li i {
+  color: var(--primary-color);
+  margin-right: 8px;
+}
+
+/* Languages list item */
+.languages ul li {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Language name font weight */
+.languages ul li span:first-child {
+  font-weight: 500;
+}
+
+/* Dots for language skill */
+.lang-dots {
+  display: flex;
+}
+
+/* Dot styles */
+.lang-dots .dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+/* Active dots colored blue */
+.lang-dots .dot.active {
+  background-color: var(--primary-color);
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Single skill item styling */
+.skill-item {
+  background: var(--primary-color);
+  color: var(--white-color);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+/* Hover effect for skill items */
+.skill-item:hover {
+  transform: translateY(-3px);
+}
+
+/* --- Experience Section --- */
+.project-card, .experience-item {
+  background: var(--white-color);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Experience item title */
+.experience-item h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+/* Company and duration italic */
+.experience-item .company-duration {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Experience description paragraph */
+.experience-item p {
+  margin-bottom: 10px;
+}
+
+/* Bold text color */
+.experience-item strong {
+  color: var(--secondary-color);
+}
+
+/* Project links styling */
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hover effect for project links */
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Education & Certifications Section --- */
+.education-grid, .certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Each education item styling */
+.education-item, .certification-item {
+  background: var(--light-gray);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* Headings in education/certifications */
+.education-item h3, .certification-item h4 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+/* Paragraph text in education/certifications */
+.education-item p, .certification-item p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Emphasized text in education */
+.education-item p em {
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+/* --- Contact Section --- */
+#contact p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1rem;
+}
+
+/* Contact links container */
+.contact-links {
+  text-align: center;
+}
+
+/* Contact buttons styling */
+.contact-button {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Icon spacing for contact buttons */
+.contact-button i {
+  margin-right: 8px;
+}
+
+/* Hover effect for contact buttons */
+.contact-button:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--secondary-color);
+  color: var(--light-gray);
+  margin-top: 30px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  /* Hide nav links on mobile by default */
+  nav ul {
+    display: none; /* Hide for hamburger */
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--white-color);
+    position: absolute;
+    top: 70px; /* Adjust based on header */
+    left: 0;
+    padding: 1rem 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Show nav links when toggled active */
+  nav ul.active {
+    display: flex;
+  }
+
+  /* Mobile nav items spacing */
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* Show hamburger menu button */
+  .hamburger {
+    display: block;
+  }
+
+  /* Resize hero heading and subtitle on smaller screens */
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+  #hero .subtitle {
+    font-size: 1.2rem;
+  }
+
+  /* Smaller heading sizes on mobile */
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Stack strengths and languages vertically on mobile */
+  .strengths-languages {
+    flex-direction: column;
+  }
+  .strengths, .languages {
+    flex-basis: 100%;
+  }
+}

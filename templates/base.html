@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shivang Mishra Portfolio</title>
+    <!-- Link to static CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <!-- Load Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Link to static JavaScript file (defer means run after HTML loads) -->
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <!-- Logo links to static -->
+        <div class="logo">
+            <a href="{{ url_for('static', filename='xyz.png') }}">
+                <span class="logo-icon">SM</span>
+            </a>
+        </div>
+        <!-- Navigation Bar with links to all sections/pages -->
+        <ul>
+            <li><a href="{{ url_for('home') }}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+            <li><a href="{{ url_for('about') }}" class="{% if request.path == '/about' %}active{% endif %}">About</a></li>
+            <li><a href="{{ url_for('skills') }}" class="{% if request.path == '/skills' %}active{% endif %}">Skills</a></li>
+            <li><a href="{{ url_for('experience') }}" class="{% if request.path == '/experience' %}active{% endif %}">Experience</a></li>
+            <li><a href="{{ url_for('education') }}" class="{% if request.path == '/education' %}active{% endif %}">Education</a></li>
+            <li><a href="{{ url_for('contact') }}" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a></li>
+        </ul>
+        <!-- Hamburger button for mobile view -->
+        <button class="hamburger" id="hamburger-menu"><i class="fas fa-bars"></i></button>
+    </nav>
+</header>
+<main>
+    <!-- Where child templates inject their main content -->
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    <!-- Footer with current year and your name -->
+    <p>© <span id="currentYear"></span> Shivang Mishra. All rights reserved.</p>
+</footer>
+</body>
+</html>

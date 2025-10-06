@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="hero">
+    <div class="hero-content">
+        <!-- Profile Photo stored in static folder -->
+        <img src="{{ url_for('static', filename='S-pic.jpg') }}" alt="Shivang Mishra" class="profile-pic-hero" />
+        <h1>SHIVANG MISHRA</h1>
+        <p class="subtitle">Computer Science Engineer | Full Stack Developer</p>
+        <div class="hero-contact">
+            <a href="tel:919936676449"><i class="fas fa-phone"></i> +91-9936676449</a>
+            <a href="mailto:Shivangmishra993667@gmail.com"><i class="fas fa-envelope"></i> Shivangmishra993667@gmail.com</a>
+            <a href="https://www.linkedin.com/in/m-shivang" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <p><i class="fas fa-map-marker-alt"></i> 1085/10 Rajeev Gandhi Nagar, Rawatpur, Kanpur</p>
+        </div>
+        <a href="{{ url_for('experience') }}" class="cta-button">View My Work</a>
+    </div>
+</section>
+{% endblock %}
